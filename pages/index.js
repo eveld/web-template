@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home({ config }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -25,10 +25,12 @@ export default function Home() {
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
 
+          {config.phase == "cfp" &&
           <a href="https://nextjs.org/learn" className={styles.card}>
             <h3>Learn &rarr;</h3>
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
+          }
 
           <a
             href="https://github.com/vercel/next.js/tree/master/examples"
@@ -38,6 +40,7 @@ export default function Home() {
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
 
+          {config.phase == "live" &&
           <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
@@ -47,6 +50,7 @@ export default function Home() {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
+          }
         </div>
       </main>
 
