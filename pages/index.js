@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-import config from '../public/config'
+import config from '../config'
 
 export function getStaticProps() {
 	return {
