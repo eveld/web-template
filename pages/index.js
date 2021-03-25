@@ -4,28 +4,25 @@ import styles from '../styles/Home.module.css'
 export function getStaticProps() {
 	return {
 		props: {
-      stage: process.env.STAGE
+      stage: process.env.STAGE,
+      title: process.env.TITLE,
+      tagline: process.env.TAGLINE
     },
 	}
 }
 
-export default function Home({ stage }) {
+export default function Home({ stage, title, tagline }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <h1 className={styles.title}>{title}</h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        <p className={styles.description}>{tagline}</p>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
