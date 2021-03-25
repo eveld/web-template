@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-export async function getStaticProps() {
+export function getStaticProps() {
 	return {
 		props: {
       stage: process.os.STAGE
