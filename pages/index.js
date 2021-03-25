@@ -25,7 +25,7 @@ export default function Home({ config }) {
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
 
-          {config.phase == "cfp" &&
+          {config.stage == "cfp" &&
           <a href="https://nextjs.org/learn" className={styles.card}>
             <h3>Learn &rarr;</h3>
             <p>Learn about Next.js in an interactive course with quizzes!</p>
@@ -40,7 +40,7 @@ export default function Home({ config }) {
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
 
-          {config.phase == "live" &&
+          {config.stage == "live" &&
           <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
