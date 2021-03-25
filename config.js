@@ -1,3 +1,3 @@
 export default {
-  "phase": process.env.PHASE
+  "stage": process.env.STAGE
 }
