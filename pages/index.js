@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 export function getStaticProps() {
 	return {
 		props: {
-      stage: process.os.STAGE
+      stage: process.env.STAGE
     },
 	}
 }
