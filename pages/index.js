@@ -1,7 +1,15 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-export default function Home({ config }) {
+export async function getStaticProps() {
+	return {
+		props: {
+      stage: process.os.STAGE
+    },
+	}
+}
+
+export default function Home({ stage }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -25,7 +33,7 @@ export default function Home({ config }) {
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
 
-          {config.stage == "cfp" &&
+          {stage == "cfp" &&
           <a href="https://nextjs.org/learn" className={styles.card}>
             <h3>Learn &rarr;</h3>
             <p>Learn about Next.js in an interactive course with quizzes!</p>
@@ -40,7 +48,7 @@ export default function Home({ config }) {
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
 
-          {config.stage == "live" &&
+          {stage == "live" &&
           <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
