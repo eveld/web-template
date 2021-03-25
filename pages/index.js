@@ -22,42 +22,41 @@ export default function Home({ stage, title, tagline }) {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>{title}</h1>
-
-        <p className={styles.description}>{tagline}</p>
+        
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          {stage == "cfp" &&
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+          {stage != "live" &&
+          <div>
+            <h1 className={styles.title}>{title}</h1>
+            <p className={styles.description}>{tagline}</p>
+          </div>
           }
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
 
           {stage == "live" &&
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          <div className={styles.card}>
+            <h3>LIVE &rarr;</h3>
+            <p>Show the livestream of the event.</p>
+          </div>
           }
+
+          <div className={styles.card}>
+            <h3>About &rarr;</h3>
+            <p>More information about the event?</p>
+          </div>
+
+          {stage == "cfp" &&
+          <div className={styles.card}>
+            <h3>Call for papers &rarr;</h3>
+            <p>Send in your talks!</p>
+          </div>
+          }
+
+          <div className={styles.card}>
+            <h3>Footer &rarr;</h3>
+            <p>Links to other stuff.</p>
+          </div>
+
+          
         </div>
       </main>
 
