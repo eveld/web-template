@@ -1,12 +1,14 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
+import config from '../public/config'
+
 export function getStaticProps() {
 	return {
 		props: {
-      stage: process.env.STAGE,
-      title: process.env.TITLE,
-      tagline: process.env.TAGLINE
+      stage: config.stage,
+      title: config.title,
+      tagline: config.tagline
     },
 	}
 }
