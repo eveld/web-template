@@ -7,17 +7,17 @@ export function getStaticProps() {
 	return {
 		props: {
       stage: config.stage,
-      title: config.title,
-      tagline: config.tagline
+      name: config.name,
+      locale: config.locale
     },
 	}
 }
 
-export default function Home({ stage, title, tagline }) {
+export default function Home({ stage, name, locale }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{title}</title>
+        <title>{name}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -27,8 +27,8 @@ export default function Home({ stage, title, tagline }) {
         <div className={styles.grid}>
           {stage != "live" &&
           <div>
-            <h1 className={styles.title}>{title}</h1>
-            <p className={styles.description}>{tagline}</p>
+            <h1 className={styles.title}>{name}</h1>
+            <p className={styles.description}>{locale}</p>
           </div>
           }
 
